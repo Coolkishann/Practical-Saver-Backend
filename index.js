@@ -8,13 +8,11 @@ const router = require("./routes/blogRoutes");
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT;
 const dbUri = process.env.MONGODB_URI;
 
 mongoose.connect(dbUri, {
-  // useNewUrlParser: true,
-  // useUnifiedTopology: true,
-  dbName: process.env.DB_NAME || "merndata",
+  dbName: process.env.DB_NAME,
 });
 
 const db = mongoose.connection;
